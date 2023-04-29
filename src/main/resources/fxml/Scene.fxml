@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.FXMLController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.FXMLController">
    <top>
       <Label text="Alien Translator" BorderPane.alignment="CENTER">
          <font>
@@ -12,4 +17,24 @@
          </font>
       </Label>
    </top>
+   <center>
+      <VBox alignment="TOP_RIGHT" BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Alien Text">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtInput" promptText="Insert Text" />
+                  <Button mnemonicParsing="false" onAction="#handleTranslation" text="Translate" />
+                  <Button mnemonicParsing="false" onAction="#handleWIldCard" text="WildCard" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtOutput" editable="false" promptText="Welcome to Alien Dictionary" />
+            <Button alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#handleClear" text="Clear Text" />
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
